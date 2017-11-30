@@ -1,0 +1,15 @@
+# 1. 临时起作用，直接用export 命令：
+export PATH=$PATH:/opt/au1200_rm/build_tools/bin
+
+# 2. 永久起作用，需要添加到文件里面：
+#vi /etc/profile 在里面加入:
+export PATH="$PATH:/opt/au1200_rm/build_tools/bin"
+
+
+3. 修改.bashrc文件：
+# vi /root/.bashrc 在里面加入：
+export PATH="$PATH:/opt/au1200_rm/build_tools/bin"
+
+#后两种方法一般需要重新注销系统才能生效，最后可以通过echo命令测试一下：
+echo $PATH
+看看输出里面是不是已经有了/my_new_path这个路径了。
