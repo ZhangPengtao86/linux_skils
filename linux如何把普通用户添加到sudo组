@@ -1,0 +1,7 @@
+linux下把普通用户添加到sudo组的方式。 
+1. 先cd到/etc/sudoers目录下 
+2. 由于sudoers文件为只读权限，所以需要添加写入权限，chmod u+w sudoers 
+3. vim sudoers 
+4. 找到root ALL = (ALL) ALL这一行，在下一行加入username ALL = (ALL) ALL。username指代你想加入sudo组的用户名。 
+5. 把sudoers文件的权限修改回来。chmod u-w sudoers 
+6. 这样普通用户可以执行sudo命令了。
